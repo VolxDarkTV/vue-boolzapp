@@ -84,23 +84,23 @@
                         </div>
                     </div>
 
-                    <div class="block unread">
+                    <!-- <div class="block unread">
                         <div class="imgbx">
                             <img src="imgs/avatar_2.jpg" alt="" class="cover">
                         </div>
-                        <!-- Dettagli Contatti -->
+                        Dettagli Contatti
                         <div class="details">
                             <div class="listhead">
                                 <h4 class="name_contact">Fabio Rossi</h4>
                                 <p class="time">10:56</p>
                             </div>
-                            <!-- Last Message -->
+                            Last Message
                             <div class="message_p">
                                 <p>Come stai? è da tanto che non ci sentiamo!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
                                 <b>1</b>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     
                     
                 </div>
@@ -131,22 +131,22 @@
                     </ul>
                 </div>
                 <!-- Chat Box -->
-                <div class="chatbox">
+                <div class="chatbox" v-for="(chatbox, index) in contacts">
                     <!-- Message -->
                     <!-- SOS JS -->
                     <div class="message my_message">
                         <p>
-                            Hi<br><span>12:15</span>
+                            {{contacts[index].messages[0].message}}<br><span>{{contacts[index].messages[0].date}}</span>
                         </p>
                     </div>
                     <div class="message frnd_message">
                         <p>
-                            Hi<br><span>12:15</span>
+                            {{contacts[index].messages[1].message}}<br><span>{{contacts[index].messages[1].date}}</span>
                         </p>
                     </div>
                     <div class="message my_message">
                         <p>
-                            Hi<br><span>12:15</span>
+                            {{contacts[index].messages[0].message}}<br><span>{{contacts[index].messages[0].date}}</span>
                         </p>
                     </div>
                 </div>
