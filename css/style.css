@@ -60,8 +60,63 @@ body{
     height: 40px;
     overflow: hidden;
     border-radius: 100%;
+    cursor: pointer;
 }
 .userimg .cover  {
     width: 100%;
+}
+/* Navigazione */
+.nav_icons{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+.nav_icons li{
+    cursor: pointer;
+    color: #51585c;
+}
 
+/* Search Chat */
+.search_chat{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+}
+.search_chat div{
+    width: 100%;
+}
+/* Input Text */
+.search_chat div label input{
+    width: 100%;
+    outline: none;
+    border: none;
+    background: #fff;
+    padding: 6px;
+    height: 38px;
+    border-radius: 30px;
+    font-size: 14px;
+    padding-left: 40px;
+}
+/* Search Icon */
+.search_chat div label input::placeholder{
+    color: #bbb;
+}
+.search_chat div label .fa-solid{
+    position: absolute;
+    left: 30px;
+    top: 14px;
+    font-size: 1.2em;
+    color: #bbb;
+}
+
+/* Chat List */
+.chatlist{
+    position: relative;
+    height: calc(100% - 110px); /*  60px + 50px = 110px */
+    overflow-y: auto;
 }
