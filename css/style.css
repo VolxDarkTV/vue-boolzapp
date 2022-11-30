@@ -71,8 +71,12 @@ body{
     object-fit: cover;
 }
 
-    .userimg .cover  {
+.userimg .cover  {
     width: 100%;
+}
+.my_data{
+    position: absolute;
+    left: 60px;
 }
 /* Navigazione */
 .nav_icons{

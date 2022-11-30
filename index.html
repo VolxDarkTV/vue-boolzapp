@@ -32,6 +32,9 @@
                         <!-- SOS JS -->
                         <img :src="me.avatar" alt="" class="cover">
                     </div>
+                    <div class="my_data">
+                        {{me.name}}
+                    </div>
                     <!-- Navigazione -->
                     <ul class="nav_icons">
                         <li>
@@ -61,9 +64,9 @@
                 <!-- Chat List -->
                 <div class="chatlist">
                     <!-- SOS JS -->
-                    <div class="block active">
+                    <div class="block" v-for="(block, index) in contacts">
                         <div class="imgbx">
-                            <img src="imgs/avatar_1.jpg" alt="" class="cover">
+                            <img :src="contacts[index].avatar" alt="" class="cover">
                         </div>
                         <!-- Dettagli Contatti -->
                         <div class="details">
@@ -74,7 +77,9 @@
                             <!-- Last Message -->
                             <div class="message_p">
                                 <p>Come stai? è da tanto che non ci sentiamo!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
-                                <b>1</b>
+                                <!-- SOS JS -->
+                                <!-- Messaggi NON Letti -->
+                                <!-- <b>1</b> -->
                             </div>
                         </div>
                     </div>
