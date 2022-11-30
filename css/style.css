@@ -281,7 +281,9 @@ body{
     background-color: #fff;
     text-align: left;
 }
-
+.frnd_message p span{
+    text-align: right;
+}
 .message.frnd_message p:before{
     content: '';
     position: absolute;
@@ -318,3 +320,4 @@ body{
     outline: none;
     border-radius: 30px;
 }
+

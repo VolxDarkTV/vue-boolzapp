@@ -28,7 +28,7 @@ createApp({
                         date: '10/01/2020 16:15:22',
                         message: 'Tutto fatto!',
                         status: 'received'
-                    }
+                    },
                 ],
             },
             {
@@ -50,7 +50,7 @@ createApp({
                         date: '20/03/2020 16:35:00',
                         message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                         status: 'sent'
-                    }
+                    },
                 ],
             },
             {
@@ -72,7 +72,7 @@ createApp({
                         date: '28/03/2020 16:15:22',
                         message: 'Ah scusa!',
                         status: 'received'
-                    }
+                    },
                 ],
             },
             {
@@ -89,7 +89,7 @@ createApp({
                         date: '10/01/2020 15:50:00',
                         message: 'Si, ma preferirei andare al cinema',
                         status: 'received'
-                    }
+                    },
                 ],
             },
             {
@@ -106,7 +106,7 @@ createApp({
                         date: '10/01/2020 15:50:00',
                         message: 'Va bene, stasera la sento',
                         status: 'received'
-                    }
+                    },
                 ],
             },
             {
@@ -128,7 +128,7 @@ createApp({
                         date: '10/01/2020 15:51:00',
                         message: 'Nessuna nuova, buona nuova',
                         status: 'sent'
-                    }
+                    },
                 ],
             },
             {
@@ -145,7 +145,7 @@ createApp({
                         date: '10/01/2020 15:50:00',
                         message: 'Grazie per avermelo ricordato, le scrivo subito!',
                         status: 'received'
-                    }
+                    },
                 ],
             },
             {
@@ -167,12 +167,15 @@ createApp({
                         date: '10/01/2020 15:51:00',
                         message: 'OK!!',
                         status: 'received'
-                    }
+                    },
                 ],
             }
-]
-
-
+        ]
     }
-  }
+  },
+  methods:{
+    visualizeChat(){
+        document.querySelector('.chatbox').classList.add('active');
+    }
+  },
 }).mount('#app')
