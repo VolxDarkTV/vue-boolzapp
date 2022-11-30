@@ -71,12 +71,12 @@
                         <!-- Dettagli Contatti -->
                         <div class="details">
                             <div class="listhead">
-                                <h4 class="name_contact">Mario Rossi</h4>
-                                <p class="time">10:56</p>
+                                <h4 class="name_contact">{{contacts[index].name}}</h4>
+                                <p class="time">{{contacts[index].messages[0].date}}</p>
                             </div>
                             <!-- Last Message -->
                             <div class="message_p">
-                                <p>Come stai? è da tanto che non ci sentiamo!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+                                <p>{{contacts[index].messages[0].message}}</p>
                                 <!-- SOS JS -->
                                 <!-- Messaggi NON Letti -->
                                 <!-- <b>1</b> -->
