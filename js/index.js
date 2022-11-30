@@ -4,10 +4,14 @@ createApp({
   data() {
     return {
 
+        me:{
+            name: 'Vincenzo',
+            avatar: 'imgs/avatar_io.jpg',
+        },
         contacts: [
             {
                 name: 'Michele',
-                avatar: 'imgs/avatar_io.jpg',
+                avatar: '_1',
                 visible: true,
                 messages: [
                     {
