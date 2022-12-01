@@ -5,6 +5,7 @@ createApp({
     return {
         active: 0,
         newMessage: '',
+        
         newDate: 'adesso',
         me:{
             name: 'Vincenzo',
@@ -172,7 +173,21 @@ createApp({
                     },
                 ],
             }
-        ]
+        ],
+
+        searchContact: '',
+
+    }
+  },
+  computed: {
+    filteredContacts() {
+      return this.contacts.filter(p => {
+        // return true if the product should be visible
+
+        // in this example we just check if the search string
+        // is a substring of the product name (case insensitive)
+        return p.name.toLowerCase().indexOf(this.searchContact.toLowerCase()) != -1;
+      });
     }
   },
   methods:{
@@ -194,6 +209,12 @@ createApp({
             this.contacts[this.active].messages.push(obj);
             this.newMessage='';
         },
+        search(){
+            const obj = {
+                name: this.searchContact
+            };
+
+        }
     }
   
 }).mount('#app')

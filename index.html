@@ -54,7 +54,7 @@
                     <div>
                         <label form="search">
                             <!-- Input Text -->
-                            <input form="search" type="text" placeholder="Search or start new chat">
+                            <input form="search" type="text" placeholder="Search or start new chat" v-model="searchContact">
                             <!-- Search Icon -->
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </label>
@@ -64,7 +64,7 @@
                 <!-- Chat List -->
                 <div class="chatlist">
                     <!-- SOS JS -->
-                    <div class="block" v-for="(block, index) in contacts" :class="active === index ? 'active' : ''" @click="chatSelect(index)">
+                    <div class="block" v-for="(block, index) in filteredContacts" :class="active === index ? 'active' : ''" @click="chatSelect(index)">
                         <div class="imgbx">
                             <img :src="block.avatar" alt="" class="cover">
                         </div>
