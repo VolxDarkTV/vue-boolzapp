@@ -5,7 +5,7 @@ createApp({
     return {
         active: 0,
         newMessage: '',
-        error: false,
+        // error: false,
         newDate: 'adesso',
         me:{
             name: 'Vincenzo',
@@ -199,9 +199,9 @@ createApp({
         addMessage(){
             // Doppio == non ===
             if(this.newMessage.length == ''){
-                this.error = true;
+                // this.error = true;
             }else{
-                this.error = false;
+                // this.error = false;
                 const obj = {
                     // 1.richiamo la stringa vuota che andrò a riempire nell'input
                     // 2.Aggiungo lo status per far capire che è un mio msg
