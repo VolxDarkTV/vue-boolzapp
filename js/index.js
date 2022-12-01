@@ -5,7 +5,7 @@ createApp({
     return {
         active: 0,
         newMessage: '',
-        
+        error: false,
         newDate: 'adesso',
         me:{
             name: 'Vincenzo',
@@ -197,17 +197,23 @@ createApp({
             this.active = x;
         },
         addMessage(){
-            const obj = {
-                // 1.richiamo la stringa vuota che andrò a riempire nell'input
-                // 2.Aggiungo lo status per far capire che è un mio msg
-                // 3.Aggiungo la data
-                message: this.newMessage,
-                status: 'sent',
-                date: this.newDate,
-            };
-            // Immetto la stringa vuota collegata all'input, lo status e la data nei messsages
-            this.filteredContacts[this.active].messages.push(obj);
-            this.newMessage='';
+            // Doppio == non ===
+            if(this.newMessage.length == ''){
+                this.error = true;
+            }else{
+                this.error = false;
+                const obj = {
+                    // 1.richiamo la stringa vuota che andrò a riempire nell'input
+                    // 2.Aggiungo lo status per far capire che è un mio msg
+                    // 3.Aggiungo la data
+                    message: this.newMessage,
+                    status: 'sent',
+                    date: this.newDate,
+                };
+                // Immetto la stringa vuota collegata all'input, lo status e la data nei messsages
+                this.filteredContacts[this.active].messages.push(obj);
+                this.newMessage='';
+            }
         },
         search(){
             const obj = {
