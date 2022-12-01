@@ -3,7 +3,9 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-
+        active: 0,
+        newMessage: '',
+        newDate: 'adesso',
         me:{
             name: 'Vincenzo',
             avatar: 'imgs/avatar_io.jpg',
@@ -174,8 +176,24 @@ createApp({
     }
   },
   methods:{
-    visualizeChat(){
-        document.querySelector('.chatbox').classList.add('active');
+    
+        chatSelect (index) {    
+            let x = index;
+            this.active = x;
+        },
+        addMessage(){
+            const obj = {
+                // 1.richiamo la stringa vuota che andrò a riempire nell'input
+                // 2.Aggiungo lo status per far capire che è un mio msg
+                // 3.Aggiungo la data
+                message: this.newMessage,
+                status: 'sent',
+                date: this.newDate,
+            };
+            // Immetto la stringa vuota collegata all'input, lo status e la data nei messsages
+            this.contacts[this.active].messages.push(obj);
+            this.newMessage='';
+        },
     }
-  },
+  
 }).mount('#app')

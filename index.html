@@ -64,19 +64,19 @@
                 <!-- Chat List -->
                 <div class="chatlist">
                     <!-- SOS JS -->
-                    <div class="block" v-for="(block, index) in contacts">
+                    <div class="block" v-for="(block, index) in contacts" :class="active === index ? 'active' : ''" @click="chatSelect(index)">
                         <div class="imgbx">
-                            <img :src="contacts[index].avatar" alt="" class="cover">
+                            <img :src="block.avatar" alt="" class="cover">
                         </div>
                         <!-- Dettagli Contatti -->
                         <div class="details">
                             <div class="listhead">
-                                <h4 class="name_contact">{{contacts[index].name}}</h4>
-                                <p class="time">{{contacts[index].messages[0].date}}</p>
+                                <h4 class="name_contact">{{block.name}}</h4>
+                                <p class="time">{{block.messages[block.messages.length -1].date}}</p>
                             </div>
                             <!-- Last Message -->
                             <div class="message_p">
-                                <p>{{contacts[index].messages[0].message}}</p>
+                                <p>{{block.messages[block.messages.length -1].message}}</p>
                                 <!-- SOS JS -->
                                 <!-- Messaggi NON Letti -->
                                 <!-- <b>1</b> -->
@@ -115,9 +115,9 @@
                     <div class="imgtext">
                         <div class="userimg">
                             <!-- SOS JS -->
-                            <img src="imgs/avatar_1.jpg" alt="" class="cover">
+                            <img :src="contacts[active].avatar" alt="" class="cover">
                         </div>
-                        <h4 class="name_contact">Mario Rossi<br><span>Online</span></h4>
+                        <h4 class="name_contact">{{contacts[active].name}}<br><span>Online</span></h4>
                     </div>
                     
                     <!-- Navigazione -->
@@ -131,31 +131,31 @@
                     </ul>
                 </div>
                 <!-- Chat Box -->
-                <div class="chatbox" v-for="(chatbox, index) in contacts">
+                <div class="chatbox">
                     <!-- Message -->
                     <!-- SOS JS -->
+                    <div class="message my_message" v-for="(chatBox, chatIndex) in contacts[active].messages" :class="chatBox.status === 'sent' ? 'my_message' : 'frnd_message'">
+                        <p>
+                            {{chatBox.message}}<br><span>{{chatBox.date}}</span>
+                        </p>
+                    </div>
+                    <!-- <div class="message frnd_message">
+                        <p>
+                            {{contacts[1].messages[1].message}}<br><span>{{contacts[1].messages[1].date}}</span>
+                        </p>
+                    </div>
                     <div class="message my_message">
                         <p>
-                            {{contacts[index].messages[0].message}}<br><span>{{contacts[index].messages[0].date}}</span>
+                            {{contacts[2].messages[2].message}}<br><span>{{contacts[2].messages[2].date}}</span>
                         </p>
-                    </div>
-                    <div class="message frnd_message">
-                        <p>
-                            {{contacts[index].messages[1].message}}<br><span>{{contacts[index].messages[1].date}}</span>
-                        </p>
-                    </div>
-                    <div class="message my_message">
-                        <p>
-                            {{contacts[index].messages[0].message}}<br><span>{{contacts[index].messages[0].date}}</span>
-                        </p>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Chat Input -->
                 <div class="chatbox_input">
                     <i class="fa-solid fa-face-laugh"></i>
                     <i class="fa-solid fa-paperclip"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @KeyUp.enter="addMessage">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
