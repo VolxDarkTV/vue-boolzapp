@@ -115,9 +115,9 @@
                     <div class="imgtext">
                         <div class="userimg">
                             <!-- SOS JS -->
-                            <img :src="contacts[active].avatar" alt="" class="cover">
+                            <img :src="filteredContacts[active].avatar" alt="" class="cover">
                         </div>
-                        <h4 class="name_contact">{{contacts[active].name}}<br><span>Online</span></h4>
+                        <h4 class="name_contact">{{filteredContacts[active].name}}<br><span>Online</span></h4>
                     </div>
                     
                     <!-- Navigazione -->
@@ -134,7 +134,7 @@
                 <div class="chatbox">
                     <!-- Message -->
                     <!-- SOS JS -->
-                    <div class="message my_message" v-for="(chatBox, chatIndex) in contacts[active].messages" :class="chatBox.status === 'sent' ? 'my_message' : 'frnd_message'">
+                    <div class="message my_message" v-for="(chatBox, chatIndex) in filteredContacts[active].messages" :class="chatBox.status === 'sent' ? 'my_message' : 'frnd_message'">
                         <p>
                             {{chatBox.message}}<br><span>{{chatBox.date}}</span>
                         </p>
