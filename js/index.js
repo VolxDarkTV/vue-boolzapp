@@ -206,7 +206,7 @@ createApp({
                 date: this.newDate,
             };
             // Immetto la stringa vuota collegata all'input, lo status e la data nei messsages
-            this.contacts[this.active].messages.push(obj);
+            this.filteredContacts[this.active].messages.push(obj);
             this.newMessage='';
         },
         search(){
