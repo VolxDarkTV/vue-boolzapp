@@ -240,7 +240,6 @@ createApp({
                     };
                     // Immetto la stringa vuota collegata all'input, lo status e la data nei messsages
                     this.filteredContacts[this.active].messages.push(obj);
-                    this.newMessageOk='';
                 }
 
             }, 1000);
