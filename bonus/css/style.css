@@ -11,7 +11,17 @@ body{
     min-height: 100vh;
     background: linear-gradient(#009688 0%, #009688 130px, #d9dbd5 130px, #d9dbd5 100%);
 }
-
+/* PRELOADER */
+#preloader{
+    background-color: #000;
+    background-image: url(../imgs/whatsapp-gif.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+}
 /* Struttura Generale */
 .container{
     position: relative;

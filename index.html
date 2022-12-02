@@ -16,7 +16,7 @@
     <title>Boolzap</title>
 </head>
 <body>
-    
+
     <div id="app">
 
         <!-- Struttura Generale -->
@@ -137,7 +137,6 @@
                     <div class="message" v-for="(chatBox, chatIndex) in filteredContacts[active].messages" :class="chatBox.status === 'sent' ? 'my_message' : 'frnd_message'">
                         <p>
                             {{chatBox.message}}<br><span>{{chatBox.date}}</span>
-                            <i class="fa-solid fa-angle-down"></i>
                         </p>
                     </div>
                     <!-- <div class="message frnd_message">

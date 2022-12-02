@@ -273,20 +273,6 @@ body{
 .my_message{
     justify-content: flex-end;
 }
-/* angle-down */
-.fa-angle-down{
-    cursor: pointer;
-}
-.message.frnd_message .fa-angle-down{
-    position: absolute;
-    top: 2px;
-    right: 5px;
-}
-.message.my_message .fa-angle-down{
-    position: absolute;
-    top: 2px;
-    left: 5px;
-}
 /* Other Message */
 .frnd_message{
     justify-content: flex-start;
