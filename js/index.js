@@ -7,7 +7,7 @@ createApp({
         active: 0,
         newMessage: '',
         // error: false,
-        newDate: '',
+        // newDate: '',
         me:{
             name: 'Vincenzo',
             avatar: 'imgs/avatar_io.jpg',
