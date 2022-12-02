@@ -6,6 +6,7 @@ createApp({
     return {
         active: 0,
         newMessage: '',
+        newMessageOk: 'ciao',
         // error: false,
         // newDate: '',
         me:{
@@ -204,7 +205,8 @@ createApp({
             }else{
                 // this.error = false;
                 // creare una costante per aggiungere la data odierna
-                let timeInThisMoment = DateTime.now().toLocaleString({day: 'numeric', month: 'long', year: '2-digit', hour: 'numeric', minute: '2-digit'});;
+                let timeInThisMoment = DateTime.now().toLocaleString({day: 'numeric', month: 'long', year: '2-digit', hour: 'numeric', minute: '2-digit'});
+                // Messaggio inviato
                 const obj = {
                     // 1.richiamo la stringa vuota che andrò a riempire nell'input
                     // 2.Aggiungo lo status per far capire che è un mio msg
@@ -217,6 +219,32 @@ createApp({
                 this.filteredContacts[this.active].messages.push(obj);
                 this.newMessage='';
             }
+            // Risposta dopo 1s
+            setTimeout(() => {
+
+                // Doppio == non ===
+                if(this.newMessageOk.length == ''){
+                    // this.error = true;
+                }else{
+                    // this.error = false;
+                    // creare una costante per aggiungere la data odierna
+                    let timeInThisMoment = DateTime.now().toLocaleString({day: 'numeric', month: 'long', year: '2-digit', hour: 'numeric', minute: '2-digit'});
+                    // Messaggio inviato
+                    const obj = {
+                        // 1.richiamo la stringa vuota che andrò a riempire nell'input
+                        // 2.Aggiungo lo status per far capire che è un mio msg
+                        // 3.Aggiungo la data
+                        message: this.newMessageOk,
+                        status: 'received',
+                        date: timeInThisMoment,
+                    };
+                    // Immetto la stringa vuota collegata all'input, lo status e la data nei messsages
+                    this.filteredContacts[this.active].messages.push(obj);
+                    this.newMessageOk='';
+                }
+
+            }, 1000);
+
         },
         search(){
             const obj = {
