@@ -1,3 +1,4 @@
+var DateTime = luxon.DateTime;
 const { createApp } = Vue;
 
 createApp({
@@ -6,7 +7,7 @@ createApp({
         active: 0,
         newMessage: '',
         // error: false,
-        newDate: 'adesso',
+        newDate: '',
         me:{
             name: 'Vincenzo',
             avatar: 'imgs/avatar_io.jpg',
@@ -202,13 +203,15 @@ createApp({
                 // this.error = true;
             }else{
                 // this.error = false;
+                // creare una costante per aggiungere la data odierna
+                let timeInThisMoment = DateTime.now().toLocaleString({day: 'numeric', month: 'long', year: '2-digit', hour: 'numeric', minute: '2-digit'});;
                 const obj = {
                     // 1.richiamo la stringa vuota che andrò a riempire nell'input
                     // 2.Aggiungo lo status per far capire che è un mio msg
                     // 3.Aggiungo la data
                     message: this.newMessage,
                     status: 'sent',
-                    date: this.newDate,
+                    date: timeInThisMoment,
                 };
                 // Immetto la stringa vuota collegata all'input, lo status e la data nei messsages
                 this.filteredContacts[this.active].messages.push(obj);
@@ -220,7 +223,7 @@ createApp({
                 name: this.searchContact
             };
 
-        }
+        },
     }
   
 }).mount('#app')
